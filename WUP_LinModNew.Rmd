@@ -1,7 +1,7 @@
 ---
 title: "linear model from Web"
-author: "Your Name"
-date: "Put semester and year"
+author: "iboni archie"
+date: "summer 2021"
 output:
    html_document:
          toc: true
@@ -35,32 +35,112 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 
 ### scatterplot
 
+```{r}
+plot(SIMS~ARM,data=data)
+```
+In this scatter plot it showing us two numerical variables SIMS and ARM
+we are looking to see how Sims affects ARM and if there is a realtionship between the two on the X axis we have SIMS and on the Y there is Arm. There is 
+an up hill pattern to the right which shows a positive relationship between the two
+
+
+
+
+
+
+
 ### Numerical results
+
+```{r}
+cor(SIMS~ARM,data=data)
+```
+The correlation explains a strong relationship between the two variables there when the the number is greater than 0.75 is considered strong The correlation between SIMS and ARM is 0.68 which is slightly under which leads us to believe that there is not a strong correlation between the two variables
 
 
 ### Inferential  (Build model.1)
+
+  
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
+
+In the table the coefficents indicate the direction of the relationship between
+a predicttor variable and its response variable.The range cannot be more that 1.0 or less that -1.0. Since the residual standard error is 1.2 which is closer to zero the variables are a closer fit the regression with a low residual standard error will have data points that are packed closely together. The adjsuted R squared being 0.4 suggest that is explainging that 40 % of the variables is are adding additional input and not much value to the model.
+
+
+
 
 #### Predict at target point
 
 
 #### scatterplot with model fit
+
+
+
+```{r}
+basicNN + geom_point() + geom_smooth(method=lm)
+``` 
+
+In this model we see that the line crossing through is the line that best fits 
+showing us that the two variables relationship to one another with the dots faliing close to the line in a upward angel shows that there is a positive 
+correlation between the two variables
+
+
+
+
+
+
+
+
+
+
   
 
 ## Model 2 SIM~GRIP
 
 ### Now add in scatterplot
 
+```{r}
+plot(SIMS~GRIP,data=data)
+```
+
+In this scatterplot we are comparing Sims vs Grip vs Sims vs Arm. This model is showing that there is still in upward relationship but with less correlation as the dots are more spaced out that
+
+
+
+
 
 ### Numerical results 
 
+```{r}
+cor(SIMS~GRIP,data=data)
+```
+
+
+
+
+
 
 ### Inferential  (Build model.2)
-  
+ 
+```{r}
+model.2 <- lm(SIMS~GRIP,data=data)
+summary.lm(model.2)
+```
+ 
+ 
+
 
 #### predict model.2 at target point
 
 #### now add the model fit to our plot for model.2
   
+
+
+
+
+
+
 
 
 ## Model 3 SIM~ARM+GRIP
@@ -70,6 +150,21 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 `
   
 ### Inferential  (Build 2-dimentional model.3)
+
+```{r}
+model.3 <- lm(SIMS~ARM + GRIP,data=data)
+summary.lm(model.3)
+```
+
+
+
+
+
+
+
+
+
+
 
 #### predict model.3 at target point
   
