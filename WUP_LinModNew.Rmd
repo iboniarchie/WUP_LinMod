@@ -83,7 +83,7 @@ basicNN + geom_point() + geom_smooth(method=lm)
 
 In this model we see that the line crossing through is the line that best fits 
 showing us that the two variables relationship to one another with the dots faliing close to the line in a upward angel shows that there is a positive 
-correlation between the two variables
+correlation between the two variables 
 
 
 
@@ -104,7 +104,7 @@ correlation between the two variables
 plot(SIMS~GRIP,data=data)
 ```
 
-In this scatterplot we are comparing Sims vs Grip vs Sims vs Arm. This model is showing that there is still in upward relationship but with less correlation as the dots are more spaced out that
+In this scatterplot we are comparing Sims vs Grip vs Sims vs Arm. This model is showing that there is still in upward relationship but with less correlation as the dots are more spaced out than the previous model which can be lead to believe that there is less an relationship betweent these two varaibles
 
 
 
@@ -115,7 +115,8 @@ In this scatterplot we are comparing Sims vs Grip vs Sims vs Arm. This model is 
 ```{r}
 cor(SIMS~GRIP,data=data)
 ```
-
+The correlation for Sims and Grip is 0.63 63% this numerical value is stating that the two variables realtionships in this model have less of a realtionship
+to one another compared to Sims vs Arm the numerical value has gone down.
 
 
 
@@ -127,7 +128,7 @@ cor(SIMS~GRIP,data=data)
 model.2 <- lm(SIMS~GRIP,data=data)
 summary.lm(model.2)
 ```
- 
+ In this table the coefficents indicate the direction of the realtioship between a predictor variable and its response variable  the residual standard error is 1.29 has gone up meaning showing that there is a gap between the relationship of the two variables the adjusted R squared is 0.     which is lower than the previous model which indicates that the new variable GRIP is not addin any value to this model.The p value is less than 2.2 indicating we should reject the null hypothesis
  
 
 
