@@ -78,7 +78,7 @@ a predicttor variable and its response variable.The range cannot be more that 1.
 
 
 ```{r}
-basicNN + geom_point() + geom_smooth(method=lm)
+ basicNN + geom_point() + geom_smooth(method=lm)
 ``` 
 
 The for Sims explained by arm is SIMS=4.1+.0545*GRIP In this model we see that the line crossing through is the line that best fits showing us that the two variables relationship to one another with the dots faliing close to the line in a upward angel shows that there is a positive correlation between the two variables.
